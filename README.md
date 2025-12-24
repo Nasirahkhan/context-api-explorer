@@ -12,11 +12,15 @@ A comprehensive React Native application demonstrating modern mobile app archite
 ## Demo Description
 
 ### **Core Features**
-- **Authentication** - Login via reqres.in API with token persistence
-- **Theming** - Dynamic Light/Dark theme switching
-- **API Integration** - Product listing with pagination
-- **State Management** - Multiple Contexts for clean architecture
-- **Navigation** - Stack navigation with auth flow
+-  **AuthContext** - Login using reqres.in API
+-  **ApiContext** - GET product list from dummyjson.com
+-  **ThemeContext** - Light/Dark theme with dynamic colors
+-  **Global Loader** - Full-screen animated loader
+-  **ProductList Screen** - Products with FlatList
+-  **ProductDetails Screen** - Detailed product view
+-  **FlatList Rendering** - Optimized list performance
+-  **Error Handling** - Comprehensive error management
+-  **Navigation** - Stack navigation with auth flow
 
 ### **User Journey**
 1. **Launch App** → Auto-login checks for saved token
@@ -27,25 +31,6 @@ A comprehensive React Native application demonstrating modern mobile app archite
 6. **Product Details** → Tap any item for complete info
 7. **Theme Toggle** → Switch between Light/Dark modes
 
-## 🏗️ Project Structure
-context-api-explorer/
-├── context/
-│ ├── AuthContext.js # Authentication & token management
-│ ├── ApiContext.js # API calls & product data
-│ ├── ThemeContext.js # Light/Dark theme management
-│ └── LoaderContext.js # Global loading state
-├── screens/
-│ ├── LoginScreen.js # User authentication
-│ ├── ProductListScreen.js # Products with search & pagination
-│ └── ProductDetailScreen.js # Individual product details
-├── components/
-│ ├── Loader.js # Animated loading component
-│ └── ProductItem.js # Reusable product card
-├── navigation/
-│ └── AppNavigator.js # Stack navigation setup
-├── config/
-│ └── ToastConfig.js # Toast message configuration
-└── App.js # Main app with providers
 
 
 ##  Quick Start
