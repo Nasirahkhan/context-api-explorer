@@ -1,41 +1,53 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Context API Explorer App
 
-# dependencies
-node_modules/
+A comprehensive React Native application demonstrating modern mobile app architecture using React Context API for state management. Features complete authentication, theming, API integration, and smooth user experience.
 
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
+## Features
 
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+### Core Requirements
+- **AuthContext** - Secure login using reqres.in mock API
+- **ApiContext** - Product list fetching with pagination
+- **ThemeContext** - Light/Dark theme support with dynamic switching
+- **Global Loader** - Full-screen animated loading indicator
+- **ProductList Screen** - Display products with filtering
+- **ProductDetails Screen** - Detailed product view
+- **FlatList Rendering** - Optimized list performance
+- **Error Handling** - Comprehensive error management
+- **Navigation** - Stack navigation with auth flow
 
-# Metro
-.metro-health-check*
+### Bonus Features (All Implemented)
+- **AsyncStorage Token** - Persistent login sessions
+- **Auto Login** - Automatic authentication on app launch
+- **Pull-to-Refresh** - Refresh product list with swipe gesture
+- **Search Bar** - Client-side product filtering
+- **Pagination** - Infinite scroll for products
+- **Toast Messages** - Beautiful notifications for errors/success
+- **Animated Loader** - Smooth loading animations
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
 
-# macOS
-.DS_Store
-*.pem
+## Architecture
 
-# local env files
-.env*.local
+src/
+├── context/
+│ ├── AuthContext.js # Authentication & token management
+│ ├── ApiContext.js # API calls & product data
+│ ├── ThemeContext.js # Light/Dark theme management
+│ └── LoaderContext.js # Global loading state
+├── screens/
+│ ├── LoginScreen.js # User authentication
+│ ├── ProductListScreen.js # Products with search & pagination
+│ └── ProductDetailScreen.js # Individual product details
+├── components/
+│ ├── Loader.js # Animated loading component
+│ └── ProductItem.js # Reusable product card
+├── navigation/
+│ └── AppNavigator.js # Stack navigation setup
+├── config/
+│ └── ToastConfig.js # Toast message configuration
+└── App.js # Main app with providers
 
-# typescript
-*.tsbuildinfo
+# Acknowledgments
 
-# generated native folders
-/ios
-/android
+ReqRes.in for mock authentication API
+
+DummyJSON for product data
