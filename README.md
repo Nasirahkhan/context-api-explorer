@@ -7,6 +7,8 @@ A comprehensive React Native application demonstrating modern mobile app archite
 <img width="959" height="445" alt="image" src="https://github.com/user-attachments/assets/7b9f5893-5a81-4047-aa52-f10c66e78d71" />
 <img width="663" height="362" alt="image" src="https://github.com/user-attachments/assets/96c13b16-6efc-49fa-9cae-1edce107a09c" />
 <img width="292" height="134" alt="image" src="https://github.com/user-attachments/assets/08448a38-e0d4-4829-84b9-3f27bdc6399a" />
+<img width="953" height="242" alt="image" src="https://github.com/user-attachments/assets/d59e7dbf-60e6-4608-9849-617817a77fc8" />
+
 
 
 ## Demo Description
