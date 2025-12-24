@@ -11,18 +11,34 @@ import {
 } from "react-native";
 import { ApiContext } from "../context/ApiContext";
 import { ThemeContext } from "../context/ThemeContext";
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function ProductListScreen({ navigation }) {
   const { products, fetchProducts, page, hasMore } = useContext(ApiContext);
-  const { colors } = useContext(ThemeContext);
+ const { colors, dark, toggleTheme } = useContext(ThemeContext);
   const [search, setSearch] = useState("");
   const [loadingMore, setLoadingMore] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
-  useEffect(() => {
-    fetchProducts(1);
-  }, []);
-
+  // useEffect(() => {
+  //   fetchProducts(1);
+  // }, []);
+ useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity 
+          onPress={toggleTheme}
+          style={{ marginRight: 15 }}
+        >
+          <Icon 
+            name={dark ? "wb-sunny" : "nights-stay"} 
+            size={24} 
+            color={colors.text} 
+          />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation, dark, colors.text, toggleTheme]);
   const handleLoadMore = useCallback(() => {
     if (hasMore && !loadingMore) {
       setLoadingMore(true);
@@ -54,6 +70,28 @@ export default function ProductListScreen({ navigation }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
+       <TouchableOpacity
+      onPress={toggleTheme}
+      style={{
+        margin: 16,
+        padding: 12,
+        backgroundColor: colors.primary,
+        borderRadius: 8,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+      }}
+    >
+      <Icon 
+        name={dark ? "wb-sunny" : "nights-stay"} 
+        size={20} 
+        color="#fff" 
+        style={{ marginRight: 8 }}
+      />
+      <Text style={{ color: '#fff', fontWeight: 'bold' }}>
+        {dark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      </Text>
+    </TouchableOpacity>
       <TextInput
         placeholder="Search"
         placeholderTextColor={colors.textSecondary}
