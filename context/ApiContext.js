@@ -1,29 +1,3 @@
-// import React, { createContext, useState } from "react";
-
-// export const ApiContext = createContext();
-
-// export const ApiProvider = ({ children }) => {
-//   const [products, setProducts] = useState([]);
-//   const [page, setPage] = useState(1);
-
-//   const fetchProducts = async (pageNo = 1) => {
-//     const res = await fetch(
-//       `https://dummyjson.com/products?limit=10&skip=${(pageNo - 1) * 10}`
-//     );
-//     const data = await res.json();
-
-//     pageNo === 1
-//       ? setProducts(data.products)
-//       : setProducts(prev => [...prev, ...data.products]);
-//   };
-
-//   return (
-//     <ApiContext.Provider value={{ products, fetchProducts, page, setPage }}>
-//       {children}
-//     </ApiContext.Provider>
-//   );
-// };
-
 
 import React, { createContext, useState } from "react";
 
